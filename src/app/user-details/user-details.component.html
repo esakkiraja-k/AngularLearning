@@ -1,0 +1,5 @@
+<p>user-details works!</p>
+<input type="text" class="form-control" [(ngModel)] = "userName" 
+(input) = "OnEnterUserName($event)" >
+<p>{{userName}}</p>
+<button class="btn btn-primary" [disabled]="!allowSave" (click) ="onSave()">Save</button>

@@ -1,0 +1,23 @@
+
+<label>Server Name</label>
+<!-- <input
+ type="text" class ="form-control" (input) = "onUpdateServerName($event)"> -->
+ <input
+ type="text" class ="form-control"
+ [(ngModel)] = "serverName">
+ <!-- <p>{{serverName}}</p> -->
+<button class="btn btn-primary" [disabled] = "!allowNewServer" 
+(click)= "onCreateServer()" >Add Server</button>
+<!-- <p [innerText] ="allowNewServer"></p> -->
+<!-- <p>{{serverCreationStatus}}</p> -->
+<p *ngIf="serverCreated"> server was created!! Name is {{serverName}}</p>
+<!-- <ng-template #noServer>
+    <p> No server was created!!</p>
+</ng-template> -->
+<app-server *ngFor="let server of servers"></app-server>
+<button type="button" class="btn btn-primary" (click) = "onDisplayDetails()" >Display Details</button>
+<p *ngIf="showTxt">show/hide paragraph</p>
+    <p *ngFor="let log of logs" 
+    [ngStyle]="{'background-color': getBackgroundColor()}"
+     [ngClass]="{colorClass: enableColor()}" >
+        {{log}}</p>
